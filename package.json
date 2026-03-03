@@ -1,0 +1,39 @@
+{
+  "name": "monadic-vue",
+  "version": "0.0.0",
+  "description": "Vue Reactivity as Monad, Comonad, and Bimonad",
+  "type": "module",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "oxlint --type-aware --type-check --ignore-path .gitignore src tests",
+    "fmt": "oxfmt --write src tests",
+    "fmt:check": "oxfmt --check src tests",
+    "check": "pnpm run fmt:check && pnpm run lint && pnpm run test && pnpm run build"
+  },
+  "peerDependencies": {
+    "vue": ">=3.5.0"
+  },
+  "devDependencies": {
+    "oxfmt": "^0.36.0",
+    "oxlint": "^1.51.0",
+    "oxlint-tsgolint": "^0.15.0",
+    "tsdown": "^0.20.3",
+    "typescript": "^5.8.0",
+    "vitest": "^3.0.0",
+    "vue": "^3.5.0"
+  },
+  "license": "MIT"
+}
